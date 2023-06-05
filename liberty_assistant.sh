@@ -234,7 +234,7 @@ if [ -f "captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar" 
 		echo -e "${CIANO}[Liberty-assistant]${NC}:Visto que já possuí o arquivo baixado, não iremos baixar novamente"
 		sleep 2
 	else
-		wget https://github.com/2ADS-Grupo08/JAR/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 		echo -e "${CIANO}[Liberty-assistant]${NC}:Baixado o arquivo, aguarde para execução!"
 		echo -e "    "
 		echo -e "    "
@@ -242,6 +242,21 @@ if [ -f "captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar" 
 fi
 echo -e "${CIANO}[Liberty-assistant]${NC}: As dependencias foram baixados, iremos executar e peço que não encerre sua máquina"
 
-java -jar captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+if [ "$(sudo docker images -q amazoncorretto:17 2> /dev/null)" ]; 
+then
+	echo "${CIANO}[Liberty-assistant]${NC}:Encontrei a imagem java!$(tput setaf 15)"
+else
+	echo "${CIANO}[Liberty-assistant]${NC}:Não encontrei nenhuma imagem para o Container Java. Vamos resolver isso!$(tput setaf 15)"
+	sudo docker pull amazoncorretto:17
+fi
+
+if [ "$(sudo docker ps -aqf name=liberty-co)" ];
+then
+    echo $(tput setaf 10)Verifiquei e vi que você possui o Container JAVA$(tput setaf 15)
+	sudo docker start liberty-co
+else
+    sudo docker run -d --name liberty-co amazoncorretto:17 sleep infinity
+fi
 
 echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
