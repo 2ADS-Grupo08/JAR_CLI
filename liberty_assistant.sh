@@ -251,12 +251,12 @@ else
 	sudo docker pull amazoncorretto:17
 fi
 
-if [ "$(sudo docker ps -aqf name=liberty-co)" ];
+if [ "$(sudo docker ps -aqf name=liberty-co-java)" ];
 then
     echo $(tput setaf 10)Verifiquei e vi que você possui o Container JAVA$(tput setaf 15)
 	sudo docker start liberty-co
 else
-    sudo docker run -d --name liberty-co amazoncorretto:17 sleep infinity
+    sudo docker run -d --name liberty-co-java amazoncorretto:17 sleep infinity
 fi
 
-echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
+

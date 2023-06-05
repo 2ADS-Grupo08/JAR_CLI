@@ -153,7 +153,7 @@ public class TelaCapturaCLI {
                 EncerraJanelas.terminalLinux(pids.get(i) + "");
                 Insercao.inserirDadosJanelaEncerrada(Integer.valueOf(pids.get(i) + ""), listaNomeJanelas.get(i), jdbcAzure, jdbcMysql, fkMaquina);
             } catch (IOException ex) {
-                Logger.getLogger(TelaCaptura.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(TelaCapturaCLI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

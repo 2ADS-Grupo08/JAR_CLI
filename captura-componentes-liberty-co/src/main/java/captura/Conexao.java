@@ -21,7 +21,7 @@ public class Conexao {
         if (server.equalsIgnoreCase("mysql")) {
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
-            dataSource.setUrl("jdbc:mysql://localhost:3306/liberty-co?autoReconnect=true&useSSL=false"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
+            dataSource.setUrl("jdbc:mysql://172.17.0.2:3306/liberty-co?autoReconnect=true&useSSL=false"); // trocar o localhost:3306 pelo endereço do banco e o tecflix pelo nome do banco
             
             dataSource.setUsername("root"); //Usuario do banco
             dataSource.setPassword("#Gfgrupo8"); //Senha do banco
