@@ -234,29 +234,35 @@ if [ -f "captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar" 
 		echo -e "${CIANO}[Liberty-assistant]${NC}:Visto que já possuí o arquivo baixado, não iremos baixar novamente"
 		sleep 2
 	else
-		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 		echo -e "${CIANO}[Liberty-assistant]${NC}:Baixado o arquivo, aguarde para execução!"
 		echo -e "    "
 		echo -e "    "
 		sleep 2
 fi
-echo -e "${CIANO}[Liberty-assistant]${NC}: As dependencias foram baixados, iremos executar e peço que não encerre sua máquina"
 
+echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
 
-if [ "$(sudo docker images -q amazoncorretto:17 2> /dev/null)" ]; 
-then
-	echo "${CIANO}[Liberty-assistant]${NC}:Encontrei a imagem java!$(tput setaf 15)"
-else
-	echo "${CIANO}[Liberty-assistant]${NC}:Não encontrei nenhuma imagem para o Container Java. Vamos resolver isso!$(tput setaf 15)"
-	sudo docker pull amazoncorretto:17
-fi
+        sleep 2
+		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-if [ "$(sudo docker ps -aqf name=liberty-co-java)" ];
-then
-    echo $(tput setaf 10)Verifiquei e vi que você possui o Container JAVA$(tput setaf 15)
-	sudo docker start liberty-co
-else
-    sudo docker run -d --name liberty-co-java amazoncorretto:17 sleep infinity
-fi
+        echo "${CIANO}[Liberty-assistant]${NC}: Concluindo Instalação..."
+        echo "${CIANO}[Liberty-assistant]${NC}: Deseja executar o programa da Liberty Company (s/n)"
+    read get4
 
+ if [ "$get4" == "s" ]; then
+            echo "${CIANO}[Liberty-assistant]${NC}:Executando aplicação"
+        sleep 3
+        chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+        java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
+        echo "${CIANO}[Liberty-assistant]${NC}:executando serviço"
+        sleep 3
+        exit
+    else
+            echo "${CIANO}[Liberty-assistant]${NC}: Encerrando sistema!"
+        sleep 3
+        exit
+
+    fi
+
+echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
