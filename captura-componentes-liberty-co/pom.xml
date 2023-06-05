@@ -22,7 +22,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>telas.Login</mainClass> 
+                            <mainClass>telas.LoginCLI</mainClass> 
                         </manifest>
                     </archive>
                 </configuration>
