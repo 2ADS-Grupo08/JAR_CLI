@@ -103,9 +103,9 @@ public class TelaCapturaCLI {
                     try {
                         slack.metodos.Slack.alertaSlack(mensagem);
                     } catch (IOException ex) {
-                        Logger.getLogger(TelaCaptura.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(TelaCapturaCLI.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(TelaCaptura.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(TelaCapturaCLI.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
@@ -116,9 +116,9 @@ public class TelaCapturaCLI {
                     try {
                         slack.metodos.Slack.alertaSlack(mensagem);
                     } catch (IOException ex) {
-                        Logger.getLogger(TelaCaptura.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(TelaCapturaCLI.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(TelaCaptura.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(TelaCapturaCLI.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
 
