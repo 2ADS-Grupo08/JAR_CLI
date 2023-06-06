@@ -268,23 +268,20 @@ echo "[Liberty-assistant]: Sua maquina já está preparada, agora vamos baixar o
 		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
         echo "[Liberty-assistant]: Concluindo Instalação..."
-        echo "[Liberty-assistant]: Deseja executar o programa da Liberty Company (s/n)"
-    read get4
+		
 
- if [ "$get4" == "s" ]; then
-            echo "[Liberty-assistant]:Executando aplicação"
+        echo "[Liberty-assistant]:Executando aplicação"
         sleep 3
+
         chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
         java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
         echo "[Liberty-assistant]:executando serviço"
         sleep 3
         exit
-    else
             echo "[Liberty-assistant]: Encerrando sistema!"
         sleep 3
         exit
 
-    fi
 
 echo -e "[Liberty-assistant]: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
