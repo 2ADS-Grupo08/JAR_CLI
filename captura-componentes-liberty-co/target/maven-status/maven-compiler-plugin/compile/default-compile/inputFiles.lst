@@ -1,15 +1,15 @@
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\captura\Conexao.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\Componente.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\captura\Auxiliar.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\captura\AppLibertyCo.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\inserts\Insercao.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\slack\metodos\Slack.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\NivelAlerta.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\Log.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\encerrar\janelas\inovacao\EncerraJanelas.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\telas\LoginCLI.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\telas\TelaCapturaCLI.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\Maquina.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\JanelaEncerrada.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\slack\metodos\TesteSlack.java
-C:\Users\leona\OneDrive\햞ea de Trabalho\JAR_CLI\captura-componentes-liberty-co\src\main\java\tabelas\Janela.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/captura/Conexao.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/NivelAlerta.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/captura/Auxiliar.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/encerrar/janelas/inovacao/EncerraJanelas.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/captura/AppLibertyCo.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/slack/metodos/Slack.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/Log.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/Janela.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/telas/LoginCLI.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/Maquina.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/inserts/Insercao.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/Componente.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/slack/metodos/TesteSlack.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/tabelas/JanelaEncerrada.java
+/home/leo/Desktop/JAR_CLI/captura-componentes-liberty-co/src/main/java/telas/TelaCapturaCLI.java

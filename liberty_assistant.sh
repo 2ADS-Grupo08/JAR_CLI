@@ -231,10 +231,10 @@ sleep 3
 
 if [ -f "captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar" ];
 	then
-		echo -e "${CIANO}[Liberty-assistant]${NC}:Visto que já possuí o arquivo baixado, não iremos baixar novamente"
+		echo -e "${CIANO}[Liberty-assistant]${NC}: Visto que já possuí o arquivo baixado, não iremos baixar novamente"
 		sleep 2
 	else
-		echo -e "${CIANO}[Liberty-assistant]${NC}:Baixado o arquivo, aguarde para execução!"
+		echo -e "${CIANO}[Liberty-assistant]${NC}: Baixado o arquivo, aguarde para execução!"
 		echo -e "    "
 		echo -e "    "
 		sleep 2
@@ -243,19 +243,21 @@ fi
 echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
 
         sleep 2
-		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
         echo "${CIANO}[Liberty-assistant]${NC}: Concluindo Instalação..."
+        sleep 2
+        clear
         echo "${CIANO}[Liberty-assistant]${NC}: Deseja executar o programa da Liberty Company (s/n)"
     read get4
-
+    clear
  if [ "$get4" == "s" ]; then
-            echo "${CIANO}[Liberty-assistant]${NC}:Executando aplicação"
+            echo "[Liberty-assistant]: Executando aplicação"
         sleep 3
-        chmod +x captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
-        java -jar captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+        chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+        java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-        echo "${CIANO}[Liberty-assistant]${NC}:executando serviço"
+        echo "${CIANO}[Liberty-assistant]${NC}: Executando serviço"
         sleep 3
         exit
     else
@@ -264,5 +266,5 @@ echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora v
         exit
 
     fi
-
+	clear
 echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
