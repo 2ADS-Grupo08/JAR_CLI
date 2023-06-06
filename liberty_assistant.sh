@@ -259,40 +259,32 @@ fi
 
 
 sudo docker exec -it liberty-co bash -c "if [ ! '$(command -v wget 2> /dev/null)' ]; 
-then 
-	echo "aplicação instalada";
-else
-	echo "Não encontrei a aplicação em sua máquina. Instalando...";
-	apt update && apt install wget -y ; 
-fi"
 
-sudo docker exec -it javawatch bash -c "if [ -f SwiftLab.jar ];
- 
 then echo 'Aplicação encontrada!'; 
 
-echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
+echo "[Liberty-assistant]: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
 
         sleep 2
 		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-        echo "${CIANO}[Liberty-assistant]${NC}: Concluindo Instalação..."
-        echo "${CIANO}[Liberty-assistant]${NC}: Deseja executar o programa da Liberty Company (s/n)"
+        echo "[Liberty-assistant]: Concluindo Instalação..."
+        echo "[Liberty-assistant]: Deseja executar o programa da Liberty Company (s/n)"
     read get4
 
  if [ "$get4" == "s" ]; then
-            echo "${CIANO}[Liberty-assistant]${NC}:Executando aplicação"
+            echo "[Liberty-assistant]:Executando aplicação"
         sleep 3
         chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
         java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-        echo "${CIANO}[Liberty-assistant]${NC}:executando serviço"
+        echo "[Liberty-assistant]:executando serviço"
         sleep 3
         exit
     else
-            echo "${CIANO}[Liberty-assistant]${NC}: Encerrando sistema!"
+            echo "[Liberty-assistant]: Encerrando sistema!"
         sleep 3
         exit
 
     fi
 
-echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
+echo -e "[Liberty-assistant]: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
