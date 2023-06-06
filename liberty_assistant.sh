@@ -270,8 +270,8 @@ echo "[Liberty-assistant]: Sua maquina já está preparada, agora vamos baixar o
         echo "[Liberty-assistant]:Executando aplicação"
         sleep 3
 
-        chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
-        java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+        chmod +x captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
+        java -jar captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
         echo "[Liberty-assistant]:executando serviço"
         sleep 3
