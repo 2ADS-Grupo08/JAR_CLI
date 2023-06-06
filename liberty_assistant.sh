@@ -231,14 +231,44 @@ sleep 3
 
 if [ -f "captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar" ];
 	then
-		echo -e "${CIANO}[Liberty-assistant]${NC}: Visto que já possuí o arquivo baixado, não iremos baixar novamente"
+		echo -e "${CIANO}[Liberty-assistant]${NC}:Visto que já possuí o arquivo baixado, não iremos baixar novamente"
 		sleep 2
 	else
-		echo -e "${CIANO}[Liberty-assistant]${NC}: Baixado o arquivo, aguarde para execução!"
+		echo -e "${CIANO}[Liberty-assistant]${NC}:Baixado o arquivo, aguarde para execução!"
 		echo -e "    "
 		echo -e "    "
 		sleep 2
 fi
+
+if [ "$(sudo docker images -q amazoncorretto:17 2> /dev/null)" ]; 
+then
+	echo "${CIANO}[Liberty-assistant]${NC}:Encontrei a imagem java!"
+else
+	echo "${CIANO}[Liberty-assistant]${NC}:Não encontrei nenhuma imagem para o Container Java. Vamos resolver isso!"
+	sudo docker pull amazoncorretto:17
+fi
+
+
+if [ "$(sudo docker ps -aqf name=liberty-co)" ];
+then
+    echo "Verifiquei e vi que você possui o Container JAVA"
+	sudo docker start liberty-co
+else
+    sudo docker run -d --name liberty-co amazoncorretto:17 sleep infinity
+fi
+
+
+sudo docker exec -it liberty-co bash -c "if [ ! '$(command -v wget 2> /dev/null)' ]; 
+then 
+	echo "aplicação instalada";
+else
+	echo "Não encontrei a aplicação em sua máquina. Instalando...";
+	apt update && apt install wget -y ; 
+fi"
+
+sudo docker exec -it javawatch bash -c "if [ -f SwiftLab.jar ];
+ 
+then echo 'Aplicação encontrada!'; 
 
 echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
 
@@ -246,18 +276,16 @@ echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora v
 		wget https://github.com/2ADS-Grupo08/JAR_CLI/raw/main/captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
         echo "${CIANO}[Liberty-assistant]${NC}: Concluindo Instalação..."
-        sleep 2
-        clear
         echo "${CIANO}[Liberty-assistant]${NC}: Deseja executar o programa da Liberty Company (s/n)"
     read get4
-    clear
+
  if [ "$get4" == "s" ]; then
-            echo "[Liberty-assistant]: Executando aplicação"
+            echo "${CIANO}[Liberty-assistant]${NC}:Executando aplicação"
         sleep 3
         chmod +x captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
         java -jar captura-componentes-liberty-co/target/captura-componentes-liberty-co-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-        echo "${CIANO}[Liberty-assistant]${NC}: Executando serviço"
+        echo "${CIANO}[Liberty-assistant]${NC}:executando serviço"
         sleep 3
         exit
     else
@@ -266,5 +294,5 @@ echo "${CIANO}[Liberty-assistant]${NC}: Sua maquina já está preparada, agora v
         exit
 
     fi
-	clear
+
 echo -e "${CIANO}[Liberty-assistant]${NC}: Obrigado por instalar nossa solução, peço que não encerre a aba de monitoramento! A Liberty Company agradece.
