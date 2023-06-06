@@ -252,7 +252,7 @@ fi
 if [ "$(sudo docker ps -aqf name=liberty-co)" ];
 then
     echo "Verifiquei e vi que você possui o Container JAVA"
-	sudo docker start liberty-co
+	sudo docker start liberty-co;
 else
     sudo docker run -d --name liberty-co amazoncorretto:17 sleep infinity
 fi
