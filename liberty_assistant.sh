@@ -242,9 +242,9 @@ fi
 
 if [ "$(sudo docker images -q amazoncorretto:17 2> /dev/null)" ]; 
 then
-	echo "${CIANO}[Liberty-assistant]${NC}:Encontrei a imagem java!"
+	echo "[Liberty-assistant]:Encontrei a imagem java!"
 else
-	echo "${CIANO}[Liberty-assistant]${NC}:Não encontrei nenhuma imagem para o Container Java. Vamos resolver isso!"
+	echo "[Liberty-assistant]: Não encontrei nenhuma imagem para o Container Java. Vamos resolver isso!"
 	sudo docker pull amazoncorretto:17
 fi
 
