@@ -147,7 +147,7 @@ if [ $( sudo docker ps -a | grep liberty-co | wc -l ) -gt 0 ];
 		echo -e "${CIANO}[Liberty-assistant]${NC}: Não encontramos nenhum banco do mysql na sua máquina, vamos resolver isso!"
 		sleep 2
 		sudo docker run -d -p 3306:3306 --name liberty-co -e "MYSQL_DATABASE=liberty-co" -e "MYSQL_ROOT_PASSWORD=#Gfgrupo8" mysql:5.7
-		sleep 10
+		sleep 14
 		sudo docker exec -it liberty-co mysql -u root -p#Gfgrupo8 -e "USE liberty-co;
 CREATE TABLE  IF NOT EXISTS Instituicao (
 	idInstituicao INT PRIMARY KEY AUTO_INCREMENT,
@@ -220,6 +220,8 @@ CREATE TABLE IF NOT EXISTS JanelaEncerrada (
 	momentoEncerrado DATETIME,
 	fkMaquina INT
 );"
+
+sleep 20
 	fi
 
         echo -e "    "
