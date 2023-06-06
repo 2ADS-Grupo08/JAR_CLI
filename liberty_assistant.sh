@@ -249,18 +249,13 @@ else
 fi
 
 
-if [ "$(sudo docker ps -aqf name=liberty-co)" ];
+if [ "$(sudo docker ps -aqf name=liberty-co-java)" ];
 then
     echo "Verifiquei e vi que você possui o Container JAVA"
-	sudo docker start liberty-co;
+	sudo docker start liberty-co-java;
 else
-    sudo docker run -d --name liberty-co amazoncorretto:17 sleep infinity
+    sudo docker run -d --name liberty-co-java amazoncorretto:17 sleep infinity
 fi
-
-
-sudo docker exec -it liberty-co bash -c "if [ ! '$(command -v wget 2> /dev/null)' ]; 
-
-then echo 'Aplicação encontrada!'; 
 
 echo "[Liberty-assistant]: Sua maquina já está preparada, agora vamos baixar o aplicativo da Liberty Company"
 
